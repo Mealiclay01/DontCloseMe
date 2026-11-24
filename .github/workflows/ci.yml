@@ -1,0 +1,32 @@
+name: macOS CI
+
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
+jobs:
+  build-and-test:
+    name: Build, Test & Package (.app)
+    runs-on: macos-14
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Show Swift version
+        run: swift --version
+
+      - name: Run unit tests
+        run: swift test
+
+      - name: Build and sign DontCloseMe.app
+        run: ./build_app.sh
+
+      - name: Verify app bundle structure
+        run: |
+          test -d build/DontCloseMe.app
+          test -x build/DontCloseMe.app/Contents/MacOS/DontCloseMe
+          test -f build/DontCloseMe.app/Contents/Resources/AppIcon.icns
+          codesign --verify --deep --strict build/DontCloseMe.app

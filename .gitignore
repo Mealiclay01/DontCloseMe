@@ -1,0 +1,16 @@
+# Swift Package Manager & Xcode build artifacts
+.build/
+.swiftpm/
+build/
+DerivedData/
+*.xcodeproj
+xcuserdata/
+*.xcuserstate
+
+# macOS Finder / editor files
+.DS_Store
+.AppleDouble
+.LSOverride
+*.swp
+*.swo
+*~

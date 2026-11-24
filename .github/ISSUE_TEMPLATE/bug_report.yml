@@ -1,0 +1,37 @@
+name: Bug Report
+description: Report a bug, false detection, lid sensor issue, or sleep watchdog problem
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting an issue with **DontCloseMe**. Please include your macOS version and MacBook model so we can reproduce HID sensor or process detection behavior accurately.
+  - type: input
+    id: mac-model
+    attributes:
+      label: Mac Model & macOS Version
+      placeholder: "e.g., MacBook Pro M3 Pro, macOS 15.2"
+    validations:
+      required: true
+  - type: input
+    id: agent
+    attributes:
+      label: AI Agent / Tool Involved
+      placeholder: "e.g., Claude Code 2.1.x, Codex, OpenCode, Cursor"
+    validations:
+      required: false
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the issue clearly.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+      description: What did you expect DontCloseMe to do?
+    validations:
+      required: true

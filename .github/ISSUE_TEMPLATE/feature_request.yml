@@ -1,0 +1,19 @@
+name: New Agent Profile / Feature Request
+description: Request support for a new AI coding agent or propose a feature
+title: "[Feature]: "
+labels: ["enhancement"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem or Agent to Support
+      description: Share the agent's binary name, app bundle, or session directory path (if requesting a new agent profile).
+    validations:
+      required: true
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed Solution
+      description: Describe how it should work.
+    validations:
+      required: true
